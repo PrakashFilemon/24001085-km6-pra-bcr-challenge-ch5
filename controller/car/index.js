@@ -49,7 +49,7 @@ exports.createCar = async (req, res, next) => {
       typeCar,
       Year,
     } = req.body;
-    const { image } = req.files;
+    const image = req?.files?.image;
     if (!plate || plate == " ") {
       return next({
         message: "Plate must be provided!!",
