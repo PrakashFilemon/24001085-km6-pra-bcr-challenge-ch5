@@ -12,6 +12,9 @@ exports.getCar = async (id) => {
     return data;
   }
   data = await car.findAll({
+    where: {
+      id,
+    },
     include: [
       {
         model: carOption,
