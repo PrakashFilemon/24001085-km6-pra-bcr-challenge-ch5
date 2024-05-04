@@ -116,7 +116,7 @@ exports.createCar = async (req, res, next) => {
         statusCode: 400,
       });
     }
-    if (!Year || Year == " ") {
+    if (!Year || Year.trim == " ") {
       return next({
         message: "Year must be provided!!",
         statusCode: 400,
