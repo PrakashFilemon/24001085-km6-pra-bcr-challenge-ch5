@@ -47,7 +47,7 @@ exports.createCar = async (req, res, next) => {
       transmission,
       available,
       typeCar,
-      Year,
+      year,
     } = req.body;
     const image = req?.files?.image;
     if (!plate || plate == " ") {
@@ -116,7 +116,7 @@ exports.createCar = async (req, res, next) => {
         statusCode: 400,
       });
     }
-    if (isNaN(Year) || Year.trim() === "") {
+    if (!year || year == " ") {
       return next({
         message: "Year must be provided!!",
         statusCode: 400,
@@ -136,7 +136,7 @@ exports.createCar = async (req, res, next) => {
       transmission,
       available,
       typeCar,
-      Year,
+      year,
     });
     res.status(201).json({
       message: "Success Created Car",
