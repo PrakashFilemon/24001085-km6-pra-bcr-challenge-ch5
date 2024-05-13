@@ -69,6 +69,29 @@ exports.login = async (req, res, next) => {
   }
 };
 
+exports.googleLogin = async (req, res, next) => {
+  try {
+    // Get AccesToken Body
+    const { accesToken } = req.body;
+
+    if (!accesToken) {
+      return next({
+        statusCode: 400,
+        message: "Acces Token must be provided",
+      });
+    }
+
+    // login with google logic
+
+    res.status(200).json({
+      message: "Success",
+      data,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 exports.profile = async (req, res, next) => {
   try {
     //Get user by Id

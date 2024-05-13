@@ -66,6 +66,10 @@ exports.login = async (email, password) => {
   return data;
 };
 
+exports.googleLogin = async (accessToken) => {
+  // validate the token and get data from google
+};
+
 exports.profile = async (id) => {
   //Get user
   let data = await getUserByID(id);
